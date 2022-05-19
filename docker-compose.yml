@@ -1,10 +1,17 @@
-version: '3.3'
+version: "3.8"
 services:
-  frontend:
-    build: ./frontend
-    image: weatherapp_frontend
+  weatherapp_frontend:
+    build: ./frontend/
+    image: weatherapp_frontend:1
     ports:
-      - "8080:8080"
+      - "8000:8000"
     volumes:
-      - ./frontend/src:/usr/src/frontend
-      - /usr/src/frontend/node_modules
+      - ./frontend/:/usr/src/weatherapp_frontend
+      - /usr/src/weatherapp_frontend/node_modules/
+  weatherapp_backend:
+    build: ./backend/
+    image: weatherapp_backend:1
+    environment:
+      - APPID=74131cb3b641cd81877b0c9fcfbf8f52
+    ports:
+    - "9000:9000"

@@ -1,17 +1,19 @@
-FROM node:17
+# Use a old node version
+FROM node:10-alpine
 
-#Create app directory
-WORKDIR /usr/src/frontend
+# Set the working dir of the container
+WORKDIR /usr/src/weatherapp_frontend
 
-#Copy package.json and package-lock.json
+#copy package and package-lock files
 COPY package*.json ./
 
+# Install packages
 RUN npm install
 
-#Bundle sources
+# Copy to working dir
 COPY . .
 
-#expose port 8080
-EXPOSE 8080
+#Expose the port 8000
+EXPOSE 8000
 
-CMD [ "node", "server.js" ]
+CMD [ "npm", "start" ]
