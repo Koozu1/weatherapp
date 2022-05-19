@@ -12,6 +12,6 @@ services:
     build: ./backend/
     image: weatherapp_backend:1
     environment:
-      - APPID=74131cb3b641cd81877b0c9fcfbf8f52
+      - APPID=""
     ports:
     - "9000:9000"
