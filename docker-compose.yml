@@ -5,6 +5,8 @@ services:
     image: weatherapp_frontend:1
     ports:
       - "8000:8000"
+    environment:
+      - ENDPOINT = https://weatherapp-image-6hpb2mtbpa-lz.a.run.app
     volumes:
       - ./frontend/:/usr/src/weatherapp_frontend
       - /usr/src/weatherapp_frontend/node_modules/
