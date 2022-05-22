@@ -1,4 +1,4 @@
-version: "3.8"
+version: "3.3"
 services:
   weatherapp_frontend:
     build: ./frontend/
@@ -6,7 +6,7 @@ services:
     ports:
       - "8000:8000"
     environment:
-      - ENDPOINT = https://weatherapp-image-6hpb2mtbpa-lz.a.run.app
+      - ENDPOINT=""
     volumes:
       - ./frontend/:/usr/src/weatherapp_frontend
       - /usr/src/weatherapp_frontend/node_modules/
